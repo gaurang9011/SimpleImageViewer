@@ -4,6 +4,7 @@ import AVFoundation
 public final class ImageViewerController: UIViewController {
     @IBOutlet fileprivate var scrollView: UIScrollView!
     @IBOutlet fileprivate var imageView: UIImageView!
+    @IBOutlet fileprivate var lblCaption: UILabel!
     @IBOutlet fileprivate var activityIndicator: UIActivityIndicatorView!
     
     fileprivate var transitionHandler: ImageViewerTransitioningHandler?
@@ -29,7 +30,7 @@ public final class ImageViewerController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = configuration?.imageView?.image ?? configuration?.image
-        
+        lblCaption.text = configuration?.captionLabel ?? ""
         setupScrollView()
         setupGestureRecognizers()
         setupTransitions()

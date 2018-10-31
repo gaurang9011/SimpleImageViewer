@@ -43,9 +43,10 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         let configuration = ImageViewerConfiguration { config in
             config.imageView = cell.imageView
+            config.captionLabel = "I was curating lots of IOS/Swift specific resources for a long time in my Evernote. So like to read Swift/IOS related posts in Medium, also blogging too. My posts publishing to my feed and also publishing on Swift Programming publication."
         }
-        
-        present(ImageViewerController(configuration: configuration), animated: true)
+        let imageViewerController = ImageViewerController(configuration: configuration)
+        present(imageViewerController, animated: true)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
